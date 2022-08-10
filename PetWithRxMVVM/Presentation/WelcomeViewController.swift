@@ -64,7 +64,7 @@ class WelcomeViewController: UIViewController {
         view.addSubview(welcomeLabel)
         welcomeLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(100)
+            make.top.equalToSuperview().inset(50)
             make.left.right.equalToSuperview().inset(50)
         }
     }
@@ -73,7 +73,7 @@ class WelcomeViewController: UIViewController {
         view.addSubview(createAccountButton)
         createAccountButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().inset(100)
+            make.bottom.equalToSuperview().inset(60)
             make.width.equalTo(250)
             make.height.equalTo(50)
         }

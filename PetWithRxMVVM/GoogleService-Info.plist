@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>504455688225-sgv9ep32ljj2u8dag8em9aes193qnk4p.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.504455688225-sgv9ep32ljj2u8dag8em9aes193qnk4p</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBGK36nZ4ftKN_z6bz0m2dXiDFvgwYUBfs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>504455688225</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Sheelow.PetWithRxMVVM</string>
+	<key>PROJECT_ID</key>
+	<string>petwithrxmvvm</string>
+	<key>STORAGE_BUCKET</key>
+	<string>petwithrxmvvm.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:504455688225:ios:5887c0484677abaa003360</string>
+</dict>
+</plist>
