@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
-class SignUpViewController: UIViewController {
+final class SignUpViewController: UIViewController {
     
     //MARK: - Properties
     
@@ -110,6 +110,7 @@ class SignUpViewController: UIViewController {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
+        stackView.spacing = 30
         return stackView
     }()
     
@@ -123,7 +124,7 @@ class SignUpViewController: UIViewController {
     //MARK: - Methods
     
     private func configureSignUpViewController() {
-        view.backgroundColor = UIColor(red: 243/255, green: 198/255, blue: 255/255, alpha: 1)
+        view.backgroundColor = .milfPink
         configureSignUpLabel()
         configureStackView()
         configureErrorLabel()
@@ -148,11 +149,6 @@ class SignUpViewController: UIViewController {
         stackView.addArrangedSubview(lastNameTextField)
         stackView.addArrangedSubview(emailTextField)
         stackView.addArrangedSubview(passwordTextField)
-        
-        stackView.setCustomSpacing(30, after: nameTextField)
-        stackView.setCustomSpacing(30, after: lastNameTextField)
-        stackView.setCustomSpacing(30, after: emailTextField)
-        stackView.setCustomSpacing(30, after: passwordTextField)
         
         stackView.snp.makeConstraints { make in
             make.top.equalTo(signUpLabel.snp.bottom).offset(50)
@@ -197,25 +193,24 @@ class SignUpViewController: UIViewController {
     }
     
     private func validateFields() -> String? {
-        if nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+        if nameTextField.text == "" ||
+            lastNameTextField.text == "" ||
+            emailTextField.text == "" ||
+            passwordTextField.text == "" {
             return "Заполните все поля"
         }
         
-        guard let cleanName = nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return nil }
-        guard let cleanLastName = lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return nil }
+        guard let cleanName = nameTextField.text, let cleanLastName = lastNameTextField.text else { return nil }
         if Utilities.isNameValid(cleanName) == false || Utilities.isNameValid(cleanLastName) == false {
             return "Некорректные имя или фамилия"
         }
         
-        guard let cleanEmail = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return nil }
+        guard let cleanEmail = emailTextField.text else { return nil }
         if Utilities.isEmailValid(cleanEmail) == false {
             return "Некорректный email"
         }
         
-        guard let cleanPassword = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return nil }
+        guard let cleanPassword = passwordTextField.text else { return nil }
         if Utilities.isPasswordValid(cleanPassword) == false {
             return "Пароль должен содержать минимум 8 символов, включая числа и спец символы"
         }
@@ -238,10 +233,10 @@ class SignUpViewController: UIViewController {
             activityIndicator.isHidden = false
             activityIndicator.startAnimating()
             
-            let name = nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            let lastName = lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let name = nameTextField.text
+            let lastName = lastNameTextField.text
+            let email = emailTextField.text
+            let password = passwordTextField.text
             
             Auth.auth().createUser(withEmail: email ?? "", password: password ?? "") { [weak self] result, err in
                 guard let self = self else { return }

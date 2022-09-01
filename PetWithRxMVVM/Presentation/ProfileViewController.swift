@@ -19,6 +19,10 @@ class ProfileViewController: UIViewController {
         configureNavigationBar()
     }
     
+    deinit {
+        print("DEINIT")
+    }
+    
     private func configureNavigationBar() {
         self.navigationItem.title = "Profile"
         
@@ -28,6 +32,13 @@ class ProfileViewController: UIViewController {
     
     @objc
     private func logoutButtonTapped() {
-        self.dismiss(animated: true)
+        let alert = UIAlertController(title: "До новых встреч", message: "Вы вышли из своего профиля", preferredStyle: .alert)
+        self.present(alert, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            let welcomeViewController = WelcomeViewController()
+            self.view.window?.rootViewController = welcomeViewController
+            self.view.window?.makeKeyAndVisible()
+        }
     }
 }

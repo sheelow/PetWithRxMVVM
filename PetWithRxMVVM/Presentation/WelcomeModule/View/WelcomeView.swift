@@ -1,16 +1,23 @@
 //
-//  LoginViewController.swift
+//  WelcomeView.swift
 //  PetWithRxMVVM
 //
-//  Created by Artem Shilov on 08.08.2022.
+//  Created by Artem Shilov on 01.09.2022.
 //
 
 import UIKit
 import SnapKit
 
-class WelcomeViewController: UIViewController {
+protocol WelcomeViewProtocol: AnyObject {
+    func loginButtonClicked()
+    func buttonCreateAccountClicked()
+}
+
+final class WelcomeView: UIView {
 
     //MARK: - Properties
+
+    weak var delegate: WelcomeViewProtocol?
 
     private lazy var welcomeLabel: UILabel = {
         let welcomeLabel = UILabel()
@@ -24,7 +31,7 @@ class WelcomeViewController: UIViewController {
     
     private lazy var loginButton: UIButton = {
         let loginButton = UIButton(type: .system)
-        loginButton.backgroundColor = UIColor(red: 171/255, green: 151/255, blue: 255/255, alpha: 1)
+        loginButton.backgroundColor = .milfPurple
         loginButton.setTitle("Войти", for: .normal)
         loginButton.setTitleColor(.white, for: .normal)
         loginButton.titleLabel?.font = .systemFont(ofSize: 18)
@@ -35,7 +42,7 @@ class WelcomeViewController: UIViewController {
     
     private lazy var createAccountButton: UIButton = {
         let createAccountButton = UIButton(type: .system)
-        createAccountButton.backgroundColor = UIColor(red: 243/255, green: 198/255, blue: 255/255, alpha: 1)
+        createAccountButton.backgroundColor = .milfPink
         createAccountButton.setTitle("Создать аккаунт", for: .normal)
         createAccountButton.setTitleColor(.white, for: .normal)
         createAccountButton.titleLabel?.font = .systemFont(ofSize: 18)
@@ -44,24 +51,27 @@ class WelcomeViewController: UIViewController {
         return createAccountButton
     }()
 
-    //MARK: - Lifecycle
+    //MARK: - Init
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configureWelcomeView()
+    }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureWelcomeViewController()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     //MARK: - Methods
 
-    private func configureWelcomeViewController() {
-        view.backgroundColor = UIColor(red: 241/255, green: 238/255, blue: 228/255, alpha: 1)
+    private func configureWelcomeView() {
+        backgroundColor = .milkWhite
         configureWelcomeLabel()
         configureСreateAccountButton()
         configureLoginButton()
     }
 
     private func configureWelcomeLabel() {
-        view.addSubview(welcomeLabel)
+        addSubview(welcomeLabel)
         welcomeLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().inset(50)
@@ -70,7 +80,7 @@ class WelcomeViewController: UIViewController {
     }
 
     private func configureСreateAccountButton() {
-        view.addSubview(createAccountButton)
+        addSubview(createAccountButton)
         createAccountButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().inset(60)
@@ -80,7 +90,7 @@ class WelcomeViewController: UIViewController {
     }
     
     private func configureLoginButton() {
-        view.addSubview(loginButton)
+        addSubview(loginButton)
         loginButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(createAccountButton.snp.top).offset(-15)
@@ -90,15 +100,12 @@ class WelcomeViewController: UIViewController {
     }
 
     @objc
-    func loginButtonClicked() {
-        let loginViewController = LoginViewController()
-        loginViewController.modalPresentationStyle = .fullScreen
-        self.present(loginViewController, animated: true)
+    private func loginButtonClicked(_ sender: UIButton) {
+        delegate?.loginButtonClicked()
     }
 
     @objc
-    func buttonCreateAccountClicked() {
-        let signUpViewController = SignUpViewController()
-        self.present(signUpViewController, animated: true)
+    private func buttonCreateAccountClicked(_ sender: UIButton) {
+        delegate?.buttonCreateAccountClicked()
     }
 }

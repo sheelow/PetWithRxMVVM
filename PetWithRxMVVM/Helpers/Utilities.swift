@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Utilities {
+final class Utilities {
     
     static func isNameValid(_ name: String) -> Bool {
         let nameTest = NSPredicate(format: "SELF MATCHES %@", "[А-Яа-яA-Za-z]{2,}")

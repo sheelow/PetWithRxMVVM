@@ -1,16 +1,39 @@
 //
-//  LoginViewController.swift
+//  LoginView.swift
 //  PetWithRxMVVM
 //
-//  Created by Artem Shilov on 08.08.2022.
+//  Created by Artem Shilov on 01.09.2022.
 //
 
 import UIKit
-import FirebaseAuth
+import SnapKit
 
-class LoginViewController: UIViewController {
+protocol LoginViewProtocol: AnyObject {
+    func loginButtonClicked(email: String, password: String)
+    func dismissButtonClicked()
+}
+
+final class LoginView: UIView {
 
     //MARK: - Properties
+
+    weak var delegate: LoginViewProtocol?
+
+    lazy var errorLabel: UILabel = {
+        let errorLabel = UILabel()
+        errorLabel.font = UIFont.systemFont(ofSize: 20)
+        errorLabel.text = ""
+        errorLabel.numberOfLines = 0
+        errorLabel.textAlignment = .center
+        errorLabel.textColor = .clear
+        return errorLabel
+    }()
+
+    lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.isHidden = true
+        return activityIndicator
+    }()
 
     private lazy var loginLabel: UILabel = {
         let loginLabel = UILabel()
@@ -21,7 +44,7 @@ class LoginViewController: UIViewController {
         loginLabel.numberOfLines = 0
         return loginLabel
     }()
-    
+
     private lazy var emailTextField: UITextField = {
         let emailTextField = UITextField()
         emailTextField.textColor = .black
@@ -33,7 +56,7 @@ class LoginViewController: UIViewController {
         emailTextField.clearButtonMode = .whileEditing
         return emailTextField
     }()
-    
+
     private lazy var passwordTextField: UITextField = {
         let passwordTextField = UITextField()
         passwordTextField.textColor = .black
@@ -69,38 +92,21 @@ class LoginViewController: UIViewController {
         createAccountButton.addTarget(self, action: #selector(dismissButtonClicked), for: .touchUpInside)
         return createAccountButton
     }()
-    
-    private lazy var errorLabel: UILabel = {
-        let errorLabel = UILabel()
-        errorLabel.font = UIFont.systemFont(ofSize: 20)
-        errorLabel.text = "Некорректные данные"
-        errorLabel.numberOfLines = 0
-        errorLabel.textAlignment = .center
-        errorLabel.textColor = .clear
-        return errorLabel
-    }()
-    
-    private lazy var activityIndicator: UIActivityIndicatorView = {
-        let activityIndicator = UIActivityIndicatorView(style: .medium)
-        activityIndicator.isHidden = true
-        return activityIndicator
-    }()
 
-    //MARK: - Lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureLoginViewController()
+    //MARK: - Init
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configureLoginView()
     }
-    
-    deinit {
-        print("DEINIT")
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    
+
     //MARK: - Methods
-    
-    private func configureLoginViewController() {
-        view.backgroundColor = UIColor(red: 171/255, green: 151/255, blue: 255/255, alpha: 1)
+
+    private func configureLoginView() {
+        backgroundColor = .milfPurple
         configureLoginLabel()
         configureEmailTextField()
         configurePasswordTextField()
@@ -111,32 +117,32 @@ class LoginViewController: UIViewController {
     }
 
     private func configureLoginLabel() {
-        view.addSubview(loginLabel)
+        addSubview(loginLabel)
         loginLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().inset(50)
             make.left.right.equalToSuperview().inset(50)
         }
     }
-    
+
     private func configureEmailTextField() {
-        view.addSubview(emailTextField)
+        addSubview(emailTextField)
         emailTextField.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(20)
             make.top.equalTo(loginLabel.snp.bottom).offset(100)
         }
     }
-    
+
     private func configurePasswordTextField() {
-        view.addSubview(passwordTextField)
+        addSubview(passwordTextField)
         passwordTextField.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(20)
             make.top.equalTo(emailTextField.snp.bottom).offset(50)
         }
     }
-    
+
     private func configureDismissButton() {
-        view.addSubview(dismissButton)
+        addSubview(dismissButton)
         dismissButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().inset(60)
@@ -144,9 +150,9 @@ class LoginViewController: UIViewController {
             make.height.equalTo(50)
         }
     }
-    
+
     private func configureLoginButton() {
-        view.addSubview(loginButton)
+        addSubview(loginButton)
         loginButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(dismissButton.snp.top).offset(-15)
@@ -154,55 +160,32 @@ class LoginViewController: UIViewController {
             make.height.equalTo(50)
         }
     }
-    
+
     private func configureErrorLabel() {
-        view.addSubview(errorLabel)
+        addSubview(errorLabel)
         errorLabel.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(20)
             make.top.equalTo(passwordTextField.snp.bottom).offset(50)
         }
     }
-    
+
     private func cofigureActivityIndicator() {
-        view.addSubview(activityIndicator)
+        addSubview(activityIndicator)
         activityIndicator.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(loginButton.snp.top).offset(-20)
         }
     }
-    
+
     @objc
-    func dismissButtonClicked() {
-        self.dismiss(animated: true)
+    private func loginButtonClicked(_ sender: UIButton) {
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+
+        delegate?.loginButtonClicked(email: email, password: password)
     }
-    
+
     @objc
-    func loginButtonClicked(completion: () -> Void) {
-        let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        Auth.auth().signIn(withEmail: email ?? "", password: password ?? "") { [weak self] result, error in
-            
-            guard let self = self else { return }
-            if error != nil {
-                self.errorLabel.textColor = .red
-            } else {
-                self.errorLabel.textColor = .green
-                self.errorLabel.text = "Успешно"
-                self.activityIndicator.isHidden = false
-                self.activityIndicator.startAnimating()
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    let mainTabBarController = MainTabBarController()
-                    self.view.window?.rootViewController = mainTabBarController
-                    self.view.window?.makeKeyAndVisible()
-                }
-            }
-        }
-//        let mainTabBarController = MainTabBarController()
-//        mainTabBarController.modalPresentationStyle = .fullScreen
-//        self.present(mainTabBarController, animated: true)
-//        view.window?.rootViewController = mainTabBarController
-//        view.window?.makeKeyAndVisible()
+    private func dismissButtonClicked(_ sender: UIButton) {
+        delegate?.dismissButtonClicked()
     }
 }
