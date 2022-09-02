@@ -28,7 +28,7 @@ final class WelcomeView: UIView {
         welcomeLabel.numberOfLines = 1
         return welcomeLabel
     }()
-    
+
     private lazy var loginButton: UIButton = {
         let loginButton = UIButton(type: .system)
         loginButton.backgroundColor = .milfPurple
@@ -39,7 +39,7 @@ final class WelcomeView: UIView {
         loginButton.addTarget(self, action: #selector(loginButtonClicked), for: .touchUpInside)
         return loginButton
     }()
-    
+
     private lazy var createAccountButton: UIButton = {
         let createAccountButton = UIButton(type: .system)
         createAccountButton.backgroundColor = .milfPink
@@ -88,7 +88,7 @@ final class WelcomeView: UIView {
             make.height.equalTo(50)
         }
     }
-    
+
     private func configureLoginButton() {
         addSubview(loginButton)
         loginButton.snp.makeConstraints { make in

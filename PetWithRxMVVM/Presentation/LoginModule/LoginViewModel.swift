@@ -12,7 +12,7 @@ import RxCocoa
 //MARK: - LoginViewModelProtocol
 
 protocol LoginViewModelProtocol {
-    var authState: PublishSubject<AutorizationState> { get }
+    var authState: PublishSubject<FirebaseManager.AutorizationState> { get }
     func login(email: String, password: String)
 }
 
@@ -22,7 +22,7 @@ final class LoginViewModel: LoginViewModelProtocol {
 
     //MARK: - Properties
 
-    var authState = PublishSubject<AutorizationState>()
+    var authState = PublishSubject<FirebaseManager.AutorizationState>()
 
     private var firebaseManager: FirebaseManagerProtocol
 

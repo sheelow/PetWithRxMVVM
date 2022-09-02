@@ -73,6 +73,15 @@
       }
     },
     {
+      "identity" : "input-mask-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RedMadRobot/input-mask-ios",
+      "state" : {
+        "revision" : "40e33ad9fb8cef671f8c4f667f6c0a0043abcbb3",
+        "version" : "6.1.0"
+      }
+    },
+    {
       "identity" : "leveldb",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/leveldb.git",

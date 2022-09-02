@@ -12,7 +12,8 @@ import RxCocoa
 //MARK: - SignUpViewModelProtocol
 
 protocol SignUpViewModelProtocol {
-    
+    var regState: PublishSubject<FirebaseManager.RegistationState> { get }
+    func register(name: String, lastName: String, email: String, password: String)
 }
 
 //MARK: - LoginViewModel
@@ -20,6 +21,8 @@ protocol SignUpViewModelProtocol {
 final class SignUpViewModel: SignUpViewModelProtocol {
 
     //MARK: - Properties
+
+    var regState = PublishSubject<FirebaseManager.RegistationState>()
 
     private var firebaseManager: FirebaseManagerProtocol
 
@@ -30,7 +33,11 @@ final class SignUpViewModel: SignUpViewModelProtocol {
     }
 
     //MARK: - Methods
-    
-    
-    
+
+    func register(name: String, lastName: String, email: String, password: String) {
+        firebaseManager.createUser(name: name, lastName: lastName, email: email, password: password) { [weak self] result in
+            guard let self = self else { return }
+            self.regState.onNext(result)
+        }
+    }
 }

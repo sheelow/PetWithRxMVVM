@@ -13,10 +13,10 @@ final class LoginViewController: BaseViewController {
 
     private var loginViewModel: LoginViewModelProtocol
 
-    private lazy var contentView: LoginView = {
-        let contentView = LoginView()
-        contentView.delegate = self
-        return contentView
+    private lazy var loginContentView: LoginView = {
+        let loginContentView = LoginView()
+        loginContentView.delegate = self
+        return loginContentView
     }()
 
     //MARK: - Lifecycle
@@ -32,7 +32,7 @@ final class LoginViewController: BaseViewController {
 
     override func loadView() {
         super.loadView()
-        view = contentView
+        view = loginContentView
     }
 
     override func viewDidLoad() {
@@ -43,10 +43,9 @@ final class LoginViewController: BaseViewController {
 
             switch type {
             case .succsess:
-                self.contentView.activityIndicator.isHidden = true
-                self.contentView.activityIndicator.stopAnimating()
-                self.contentView.errorLabel.textColor = .green
-                self.contentView.errorLabel.text = "Все верно"
+                self.loginContentView.activityIndicator.isHidden = true
+                self.loginContentView.activityIndicator.stopAnimating()
+                self.loginContentView.errorLabel.textColor = .clear
                 let alert = UIAlertController(title: "Ура!",
                                               message: "Авторизация прошла успешно",
                                               preferredStyle: .alert)
@@ -54,10 +53,10 @@ final class LoginViewController: BaseViewController {
                 self.goToNextScreen()
 
             case .failure:
-                self.contentView.activityIndicator.isHidden = true
-                self.contentView.activityIndicator.stopAnimating()
-                self.contentView.errorLabel.textColor = .red
-                self.contentView.errorLabel.text = "Неверные логин или пароль"
+                self.loginContentView.activityIndicator.isHidden = true
+                self.loginContentView.activityIndicator.stopAnimating()
+                self.loginContentView.errorLabel.textColor = .red
+                self.loginContentView.errorLabel.text = "Неверные логин или пароль"
             }
         }).disposed(by: disposeBag)
     }
@@ -78,8 +77,8 @@ final class LoginViewController: BaseViewController {
 extension LoginViewController: LoginViewProtocol {
 
     func loginButtonClicked(email: String, password: String) {
-        self.contentView.activityIndicator.isHidden = false
-        self.contentView.activityIndicator.startAnimating()
+        self.loginContentView.activityIndicator.isHidden = false
+        self.loginContentView.activityIndicator.startAnimating()
         loginViewModel.login(email: email, password: password)
     }
 

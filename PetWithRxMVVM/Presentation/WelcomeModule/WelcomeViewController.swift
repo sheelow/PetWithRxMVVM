@@ -11,17 +11,17 @@ final class WelcomeViewController: UIViewController {
 
     //MARK: - Properties
 
-    private lazy var contentView: WelcomeView = {
-        let contentView = WelcomeView()
-        contentView.delegate = self
-        return contentView
+    private lazy var welcomeContentView: WelcomeView = {
+        let welcomeContentView = WelcomeView()
+        welcomeContentView.delegate = self
+        return welcomeContentView
     }()
 
     //MARK: - Lifecycle
 
     override func loadView() {
         super.loadView()
-        view = contentView
+        view = welcomeContentView
     }
 }
 
@@ -36,7 +36,7 @@ extension WelcomeViewController: WelcomeViewProtocol {
     }
 
     func buttonCreateAccountClicked() {
-        let signUpViewController = SignUpViewController()
+        let signUpViewController = SignUpViewController(signUpViewModel: SignUpViewModel(firebaseManager: FirebaseManager()))
         self.present(signUpViewController, animated: true)
     }
 }

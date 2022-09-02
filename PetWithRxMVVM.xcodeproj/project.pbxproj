@@ -13,6 +13,8 @@
 		975D890328C0D0FD00C5CAE1 /* SingUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975D890228C0D0FD00C5CAE1 /* SingUpViewModel.swift */; };
 		975D890628C0D11B00C5CAE1 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975D890528C0D11B00C5CAE1 /* SignUpView.swift */; };
 		975D890A28C0D6F300C5CAE1 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975D890928C0D6F300C5CAE1 /* WelcomeView.swift */; };
+		975D890C28C20CAE00C5CAE1 /* InputCell + MaskedTextFieldDelegateListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975D890B28C20CAE00C5CAE1 /* InputCell + MaskedTextFieldDelegateListener.swift */; };
+		975D890F28C20D5D00C5CAE1 /* InputMask in Frameworks */ = {isa = PBXBuildFile; productRef = 975D890E28C20D5D00C5CAE1 /* InputMask */; };
 		9761946628A260B8007BD6C9 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9761946528A260B8007BD6C9 /* GalleryViewController.swift */; };
 		9761946828A260D1007BD6C9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9761946728A260D1007BD6C9 /* PageViewController.swift */; };
 		9761946A28A260DD007BD6C9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9761946928A260DD007BD6C9 /* ProfileViewController.swift */; };
@@ -49,6 +51,7 @@
 		975D890228C0D0FD00C5CAE1 /* SingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewModel.swift; sourceTree = "<group>"; };
 		975D890528C0D11B00C5CAE1 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		975D890928C0D6F300C5CAE1 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		975D890B28C20CAE00C5CAE1 /* InputCell + MaskedTextFieldDelegateListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputCell + MaskedTextFieldDelegateListener.swift"; sourceTree = "<group>"; };
 		9761946528A260B8007BD6C9 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		9761946728A260D1007BD6C9 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		9761946928A260DD007BD6C9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 				9799E22228A548F900D18165 /* RxCocoa in Frameworks */,
 				9761947028A28D36007BD6C9 /* FirebaseAnalytics in Frameworks */,
 				9761947628A28D36007BD6C9 /* FirebaseStorage in Frameworks */,
+				975D890F28C20D5D00C5CAE1 /* InputMask in Frameworks */,
 				9799E22428A548F900D18165 /* RxSwift in Frameworks */,
 				977C306928A12EED005DEECA /* SnapKit in Frameworks */,
 			);
@@ -173,11 +177,11 @@
 		9761946B28A260E8007BD6C9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9769BE6E28A1974100C372CD /* MainTabBarController.swift */,
 				975D88FB28C0034400C5CAE1 /* Common */,
 				975D890728C0D6D300C5CAE1 /* WelcomeModule */,
 				9799E21B28A529CD00D18165 /* LoginModule */,
 				975D890128C0D0DC00C5CAE1 /* SignUpModule */,
-				9769BE6E28A1974100C372CD /* MainTabBarController.swift */,
 				9769BE7028A1978600C372CD /* TableViewController.swift */,
 				9769BE7228A197AC00C372CD /* CollectionViewController.swift */,
 				9761946528A260B8007BD6C9 /* GalleryViewController.swift */,
@@ -190,8 +194,9 @@
 		9761948228A2C338007BD6C9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9761948328A2C347007BD6C9 /* ViewController + CustomBarButtonItem.swift */,
+				975D890B28C20CAE00C5CAE1 /* InputCell + MaskedTextFieldDelegateListener.swift */,
 				975D88F628BFDCD600C5CAE1 /* UIColor + Custom Colors.swift */,
+				9761948328A2C347007BD6C9 /* ViewController + CustomBarButtonItem.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 				9761947A28A28EDB007BD6C9 /* FirebaseAuth */,
 				9799E22128A548F900D18165 /* RxCocoa */,
 				9799E22328A548F900D18165 /* RxSwift */,
+				975D890E28C20D5D00C5CAE1 /* InputMask */,
 			);
 			productName = PetWithRxMVVM;
 			productReference = 977C304E28A12CFC005DEECA /* PetWithRxMVVM.app */;
@@ -321,6 +327,7 @@
 				9761947828A28E8D007BD6C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				9761947928A28EDB007BD6C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				9799E22028A548F900D18165 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				975D890D28C20D5D00C5CAE1 /* XCRemoteSwiftPackageReference "input-mask-ios" */,
 			);
 			productRefGroup = 977C304F28A12CFC005DEECA /* Products */;
 			projectDirPath = "";
@@ -370,6 +377,7 @@
 				9761946628A260B8007BD6C9 /* GalleryViewController.swift in Sources */,
 				975D890028C0C58B00C5CAE1 /* LoginView.swift in Sources */,
 				977C306D28A15BDA005DEECA /* LoginViewController.swift in Sources */,
+				975D890C28C20CAE00C5CAE1 /* InputCell + MaskedTextFieldDelegateListener.swift in Sources */,
 				977C305428A12CFC005DEECA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,6 +588,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		975D890D28C20D5D00C5CAE1 /* XCRemoteSwiftPackageReference "input-mask-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RedMadRobot/input-mask-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		9761946E28A28D36007BD6C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -631,6 +647,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		975D890E28C20D5D00C5CAE1 /* InputMask */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 975D890D28C20D5D00C5CAE1 /* XCRemoteSwiftPackageReference "input-mask-ios" */;
+			productName = InputMask;
+		};
 		9761946F28A28D36007BD6C9 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9761946E28A28D36007BD6C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
