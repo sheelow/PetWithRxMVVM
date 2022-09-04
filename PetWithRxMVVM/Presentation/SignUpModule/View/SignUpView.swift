@@ -136,12 +136,12 @@ final class SignUpView: UIView {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
     }
-    
+
     func hideActivity() {
         activityIndicator.isHidden = true
         activityIndicator.stopAnimating()
     }
-    
+
     private func configureSignUpView() {
         backgroundColor = .milfPink
         configureSignUpLabel()
@@ -163,7 +163,6 @@ final class SignUpView: UIView {
 
     private func configureStackView() {
         addSubview(stackView)
-
         stackView.addArrangedSubview(nameTextField)
         stackView.addArrangedSubview(lastNameTextField)
         stackView.addArrangedSubview(emailTextField)

@@ -15,6 +15,13 @@
 		975D890A28C0D6F300C5CAE1 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975D890928C0D6F300C5CAE1 /* WelcomeView.swift */; };
 		975D890C28C20CAE00C5CAE1 /* InputCell + MaskedTextFieldDelegateListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975D890B28C20CAE00C5CAE1 /* InputCell + MaskedTextFieldDelegateListener.swift */; };
 		975D890F28C20D5D00C5CAE1 /* InputMask in Frameworks */ = {isa = PBXBuildFile; productRef = 975D890E28C20D5D00C5CAE1 /* InputMask */; };
+		975D891228C2244E00C5CAE1 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975D891128C2244E00C5CAE1 /* TableViewModel.swift */; };
+		975D891828C22A7800C5CAE1 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975D891728C22A7800C5CAE1 /* TableViewCell.swift */; };
+		975D891B28C2315600C5CAE1 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975D891A28C2315600C5CAE1 /* Profile.swift */; };
+		975D891D28C23EBB00C5CAE1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975D891C28C23EBB00C5CAE1 /* AppConstants.swift */; };
+		975D892028C2413D00C5CAE1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 975D891F28C2413D00C5CAE1 /* Alamofire */; };
+		975D892728C246E800C5CAE1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 975D892628C246E800C5CAE1 /* Kingfisher */; };
+		975D892A28C25F8900C5CAE1 /* TableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975D892928C25F8900C5CAE1 /* TableViewCellModel.swift */; };
 		9761946628A260B8007BD6C9 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9761946528A260B8007BD6C9 /* GalleryViewController.swift */; };
 		9761946828A260D1007BD6C9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9761946728A260D1007BD6C9 /* PageViewController.swift */; };
 		9761946A28A260DD007BD6C9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9761946928A260DD007BD6C9 /* ProfileViewController.swift */; };
@@ -42,6 +49,8 @@
 		9799E21D28A529ED00D18165 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9799E21C28A529ED00D18165 /* LoginViewModel.swift */; };
 		9799E22228A548F900D18165 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 9799E22128A548F900D18165 /* RxCocoa */; };
 		9799E22428A548F900D18165 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9799E22328A548F900D18165 /* RxSwift */; };
+		97C4CB0428C34ED4007CE0C6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4CB0328C34ED4007CE0C6 /* DetailViewController.swift */; };
+		97C4CB0628C34EE4007CE0C6 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4CB0528C34EE4007CE0C6 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +61,11 @@
 		975D890528C0D11B00C5CAE1 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		975D890928C0D6F300C5CAE1 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		975D890B28C20CAE00C5CAE1 /* InputCell + MaskedTextFieldDelegateListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputCell + MaskedTextFieldDelegateListener.swift"; sourceTree = "<group>"; };
+		975D891128C2244E00C5CAE1 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
+		975D891728C22A7800C5CAE1 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		975D891A28C2315600C5CAE1 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		975D891C28C23EBB00C5CAE1 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		975D892928C25F8900C5CAE1 /* TableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellModel.swift; sourceTree = "<group>"; };
 		9761946528A260B8007BD6C9 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		9761946728A260D1007BD6C9 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		9761946928A260DD007BD6C9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +87,8 @@
 		9799E21628A50D8300D18165 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		9799E21928A5274E00D18165 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		9799E21C28A529ED00D18165 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		97C4CB0328C34ED4007CE0C6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		97C4CB0528C34EE4007CE0C6 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +101,10 @@
 				9761947428A28D36007BD6C9 /* FirebaseFirestore in Frameworks */,
 				9799E22228A548F900D18165 /* RxCocoa in Frameworks */,
 				9761947028A28D36007BD6C9 /* FirebaseAnalytics in Frameworks */,
+				975D892028C2413D00C5CAE1 /* Alamofire in Frameworks */,
 				9761947628A28D36007BD6C9 /* FirebaseStorage in Frameworks */,
 				975D890F28C20D5D00C5CAE1 /* InputMask in Frameworks */,
+				975D892728C246E800C5CAE1 /* Kingfisher in Frameworks */,
 				9799E22428A548F900D18165 /* RxSwift in Frameworks */,
 				977C306928A12EED005DEECA /* SnapKit in Frameworks */,
 			);
@@ -106,6 +124,7 @@
 		975D88F928BFFF4F00C5CAE1 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				975D891C28C23EBB00C5CAE1 /* AppConstants.swift */,
 				977C305128A12CFC005DEECA /* AppDelegate.swift */,
 				977C305C28A12CFE005DEECA /* LaunchScreen.storyboard */,
 				977C305328A12CFC005DEECA /* SceneDelegate.swift */,
@@ -174,6 +193,73 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		975D891028C2242700C5CAE1 /* TableModule */ = {
+			isa = PBXGroup;
+			children = (
+				9769BE7028A1978600C372CD /* TableViewController.swift */,
+				975D891128C2244E00C5CAE1 /* TableViewModel.swift */,
+				975D891628C22A5C00C5CAE1 /* Cell */,
+				975D892828C25F6B00C5CAE1 /* Model */,
+			);
+			path = TableModule;
+			sourceTree = "<group>";
+		};
+		975D891628C22A5C00C5CAE1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				975D891728C22A7800C5CAE1 /* TableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		975D891928C2310A00C5CAE1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				975D891A28C2315600C5CAE1 /* Profile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		975D892128C2443900C5CAE1 /* CollectionModule */ = {
+			isa = PBXGroup;
+			children = (
+				9769BE7228A197AC00C372CD /* CollectionViewController.swift */,
+			);
+			path = CollectionModule;
+			sourceTree = "<group>";
+		};
+		975D892228C2444600C5CAE1 /* GalleryModule */ = {
+			isa = PBXGroup;
+			children = (
+				9761946528A260B8007BD6C9 /* GalleryViewController.swift */,
+			);
+			path = GalleryModule;
+			sourceTree = "<group>";
+		};
+		975D892328C2446100C5CAE1 /* PageModule */ = {
+			isa = PBXGroup;
+			children = (
+				9761946728A260D1007BD6C9 /* PageViewController.swift */,
+			);
+			path = PageModule;
+			sourceTree = "<group>";
+		};
+		975D892428C2446C00C5CAE1 /* ProfileModule */ = {
+			isa = PBXGroup;
+			children = (
+				9761946928A260DD007BD6C9 /* ProfileViewController.swift */,
+			);
+			path = ProfileModule;
+			sourceTree = "<group>";
+		};
+		975D892828C25F6B00C5CAE1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				975D892928C25F8900C5CAE1 /* TableViewCellModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9761946B28A260E8007BD6C9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,11 +268,12 @@
 				975D890728C0D6D300C5CAE1 /* WelcomeModule */,
 				9799E21B28A529CD00D18165 /* LoginModule */,
 				975D890128C0D0DC00C5CAE1 /* SignUpModule */,
-				9769BE7028A1978600C372CD /* TableViewController.swift */,
-				9769BE7228A197AC00C372CD /* CollectionViewController.swift */,
-				9761946528A260B8007BD6C9 /* GalleryViewController.swift */,
-				9761946728A260D1007BD6C9 /* PageViewController.swift */,
-				9761946928A260DD007BD6C9 /* ProfileViewController.swift */,
+				975D891028C2242700C5CAE1 /* TableModule */,
+				97C4CB0228C34EB1007CE0C6 /* DetailModule */,
+				975D892128C2443900C5CAE1 /* CollectionModule */,
+				975D892228C2444600C5CAE1 /* GalleryModule */,
+				975D892328C2446100C5CAE1 /* PageModule */,
+				975D892428C2446C00C5CAE1 /* ProfileModule */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -224,6 +311,7 @@
 				975D88FA28C0005800C5CAE1 /* Common */,
 				9761948228A2C338007BD6C9 /* Extensions */,
 				977EEF5A28A3F9C200CF8EF0 /* Helpers */,
+				975D891928C2310A00C5CAE1 /* Model */,
 				9761946B28A260E8007BD6C9 /* Presentation */,
 				9799E21828A5273D00D18165 /* Services */,
 			);
@@ -265,6 +353,15 @@
 			path = LoginModule;
 			sourceTree = "<group>";
 		};
+		97C4CB0228C34EB1007CE0C6 /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				97C4CB0328C34ED4007CE0C6 /* DetailViewController.swift */,
+				97C4CB0528C34EE4007CE0C6 /* DetailViewModel.swift */,
+			);
+			path = DetailModule;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -291,6 +388,8 @@
 				9799E22128A548F900D18165 /* RxCocoa */,
 				9799E22328A548F900D18165 /* RxSwift */,
 				975D890E28C20D5D00C5CAE1 /* InputMask */,
+				975D891F28C2413D00C5CAE1 /* Alamofire */,
+				975D892628C246E800C5CAE1 /* Kingfisher */,
 			);
 			productName = PetWithRxMVVM;
 			productReference = 977C304E28A12CFC005DEECA /* PetWithRxMVVM.app */;
@@ -328,6 +427,8 @@
 				9761947928A28EDB007BD6C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				9799E22028A548F900D18165 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				975D890D28C20D5D00C5CAE1 /* XCRemoteSwiftPackageReference "input-mask-ios" */,
+				975D891E28C2413D00C5CAE1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				975D892528C246E800C5CAE1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 977C304F28A12CFC005DEECA /* Products */;
 			projectDirPath = "";
@@ -359,25 +460,32 @@
 				977C306628A12D96005DEECA /* WelcomeViewController.swift in Sources */,
 				9761946828A260D1007BD6C9 /* PageViewController.swift in Sources */,
 				9799E21728A50D8300D18165 /* FirebaseManager.swift in Sources */,
+				975D891228C2244E00C5CAE1 /* TableViewModel.swift in Sources */,
 				9769BE7128A1978600C372CD /* TableViewController.swift in Sources */,
 				9799E21D28A529ED00D18165 /* LoginViewModel.swift in Sources */,
 				975D88FD28C0035900C5CAE1 /* BaseViewController.swift in Sources */,
 				977C305228A12CFC005DEECA /* AppDelegate.swift in Sources */,
 				977EEF5C28A3F9DE00CF8EF0 /* Utilities.swift in Sources */,
+				97C4CB0428C34ED4007CE0C6 /* DetailViewController.swift in Sources */,
 				9769BE6F28A1974100C372CD /* MainTabBarController.swift in Sources */,
+				975D891D28C23EBB00C5CAE1 /* AppConstants.swift in Sources */,
 				9769BE7328A197AC00C372CD /* CollectionViewController.swift in Sources */,
+				97C4CB0628C34EE4007CE0C6 /* DetailViewModel.swift in Sources */,
 				975D890628C0D11B00C5CAE1 /* SignUpView.swift in Sources */,
+				975D891828C22A7800C5CAE1 /* TableViewCell.swift in Sources */,
 				975D890328C0D0FD00C5CAE1 /* SingUpViewModel.swift in Sources */,
 				9761948428A2C347007BD6C9 /* ViewController + CustomBarButtonItem.swift in Sources */,
 				9761946A28A260DD007BD6C9 /* ProfileViewController.swift in Sources */,
 				9799E21A28A5274E00D18165 /* NetworkService.swift in Sources */,
 				975D88F728BFDCD600C5CAE1 /* UIColor + Custom Colors.swift in Sources */,
+				975D892A28C25F8900C5CAE1 /* TableViewCellModel.swift in Sources */,
 				977C306B28A15BCD005DEECA /* SignUpViewController.swift in Sources */,
 				975D890A28C0D6F300C5CAE1 /* WelcomeView.swift in Sources */,
 				9761946628A260B8007BD6C9 /* GalleryViewController.swift in Sources */,
 				975D890028C0C58B00C5CAE1 /* LoginView.swift in Sources */,
 				977C306D28A15BDA005DEECA /* LoginViewController.swift in Sources */,
 				975D890C28C20CAE00C5CAE1 /* InputCell + MaskedTextFieldDelegateListener.swift in Sources */,
+				975D891B28C2315600C5CAE1 /* Profile.swift in Sources */,
 				977C305428A12CFC005DEECA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,6 +704,22 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		975D891E28C2413D00C5CAE1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		975D892528C246E800C5CAE1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		9761946E28A28D36007BD6C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -651,6 +775,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 975D890D28C20D5D00C5CAE1 /* XCRemoteSwiftPackageReference "input-mask-ios" */;
 			productName = InputMask;
+		};
+		975D891F28C2413D00C5CAE1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 975D891E28C2413D00C5CAE1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		975D892628C246E800C5CAE1 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 975D892528C246E800C5CAE1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		9761946F28A28D36007BD6C9 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

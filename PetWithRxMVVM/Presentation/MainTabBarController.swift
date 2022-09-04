@@ -16,33 +16,32 @@ final class MainTabBarController: UITabBarController {
 
     private func configureTabBar() {
 
-        let tableViewNavigationController = UINavigationController(rootViewController: TableViewController())
+        let tableViewNavigationController = UINavigationController(rootViewController: TableViewController(tableViewModel: TableViewModel(service: NetworkService())))
         let collectionViewNavigationController = UINavigationController(rootViewController: CollectionViewController())
         let galleryViewNavigationController = UINavigationController(rootViewController: GalleryViewController())
         let pageViewNavigationController = UINavigationController(rootViewController: PageViewController())
         let profileViewNavigationController = UINavigationController(rootViewController: ProfileViewController())
 
         tableViewNavigationController.tabBarItem = UITabBarItem(
-            title: "Table",
+            title: "Table Мемы",
             image: UIImage(systemName: "tablecells"),
             tag: 0)
         collectionViewNavigationController.tabBarItem = UITabBarItem(
-            title: "Collection",
+            title: "Collection Мемы",
             image: UIImage(systemName: "pip"),
             tag: 1)
         galleryViewNavigationController.tabBarItem = UITabBarItem(
-            title: "Gallery",
+            title: "Gallery Мемы",
             image: UIImage(systemName: "display"),
             tag: 2)
         pageViewNavigationController.tabBarItem = UITabBarItem(
-            title: "Page",
+            title: "Page Мемы",
             image: UIImage(systemName: "list.bullet.rectangle"),
             tag: 3)
         profileViewNavigationController.tabBarItem = UITabBarItem(
-            title: "Profile",
+            title: "Мой профиль",
             image: UIImage(systemName: "person"),
             tag: 4)
-        
 
         viewControllers = [tableViewNavigationController, collectionViewNavigationController, galleryViewNavigationController, pageViewNavigationController, profileViewNavigationController]
 

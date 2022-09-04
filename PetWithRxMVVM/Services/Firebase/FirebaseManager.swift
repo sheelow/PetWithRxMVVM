@@ -25,7 +25,7 @@ final class FirebaseManager: FirebaseManagerProtocol {
         case succsess
         case failure
     }
-    
+
     //MARK: - CreateUser
 
     func createUser(name: String, lastName: String, email: String, password: String, completion: @escaping (FirebaseManager.RegistationState) -> Void) {

@@ -9,14 +9,10 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-//MARK: - SignUpViewModelProtocol
-
 protocol SignUpViewModelProtocol {
     var regState: PublishSubject<FirebaseManager.RegistationState> { get }
     func register(name: String, lastName: String, email: String, password: String)
 }
-
-//MARK: - LoginViewModel
 
 final class SignUpViewModel: SignUpViewModelProtocol {
 

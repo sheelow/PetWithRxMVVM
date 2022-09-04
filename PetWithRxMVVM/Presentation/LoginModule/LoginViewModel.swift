@@ -9,14 +9,10 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-//MARK: - LoginViewModelProtocol
-
 protocol LoginViewModelProtocol {
     var authState: PublishSubject<FirebaseManager.AutorizationState> { get }
     func login(email: String, password: String)
 }
-
-//MARK: - LoginViewModel
 
 final class LoginViewModel: LoginViewModelProtocol {
 

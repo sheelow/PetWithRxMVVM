@@ -39,10 +39,10 @@ final class SignUpViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         signUpViewModel.regState.subscribe(onNext: { [weak self] type in
             guard let self = self else { return }
-            
+
             switch type {
             case .succsess:
                 self.signUpContentView.errorLabel.textColor = .green
@@ -98,14 +98,14 @@ final class SignUpViewController: BaseViewController {
 //MARK: - SignUpViewProtocol
 
 extension SignUpViewController: SignUpViewProtocol {
-    
+
     func registerButtonClicked(name: String, lastName: String, email: String, password: String) {
         self.signUpContentView.showActivity()
-        
+
         let error = validateFields()
         if error != nil {
             self.signUpContentView.hideActivity()
-            
+
             guard let error = error else { return }
             showError(error)
         } else {
